@@ -1,0 +1,169 @@
+
+<form class="forms-sample" action="/postevent" method="post">
+  
+<div class="content-wrapper">
+  <!-- Page Title Header Starts-->
+  <div class="backIcon">
+      <a href="/event-list"><img src="/assets/images/navIcon/back.png" alt="Back" /></a>
+  </div>
+  <div class="headerTitle">
+      <h2>Add Event</h2>    
+      <% if(typeof errors !== 'undefined' && typeof errors.message !== 'undefined') { %>
+        <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+     <% } %>  
+     <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+        <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+     <% } %>
+  </div>
+  <!-- Page Title Header Ends-->
+<div class="midContentRightBar">
+    <div class="meddleContentSec">
+      <div class="eventInfoBox">
+          <div class="infoBoxTitle">
+              <h3>Enter Event Information</h3>
+          </div>
+          <div class="infoBoxContent">
+              <div class="boxContentRow">
+                  <span class="infoTitle">Select Client</span>
+                  <div class="infoBoxData infoSelectBox">
+                      <div class="form-group">
+                        <select class="form-control" name="client_id" >
+                          <% data.map((offer,i) => { %>
+                          <option  value="<%= offer._id %>"><%= offer.company_name %></option>
+                          <% }) %>
+                        </select>
+                        <% if(typeof errors !== 'undefined' && typeof errors.client_id !== 'undefined') { %>
+                          <p class = "error"><%- errors["client_id"] %></p>
+                      <% } %> 
+                      </div>
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">Event Title</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control" name="title" value="<%=formdata['title'] %>" id="title" placeholder="Enter event title">
+                      <% if(typeof errors !== 'undefined' && typeof errors.title !== 'undefined') { %>
+                        <p class = "error"><%- errors["title"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                <span class="infoTitle">Site url</span>
+                <div class="infoBoxData">
+                    <input type="text" class="form-control" name="site_url" value="<%=formdata['site_url'] %>" id="site_url" placeholder="Enter site url">
+                    <% if(typeof errors !== 'undefined' && typeof errors.site_url !== 'undefined') { %>
+                      <p class = "error"><%- errors["site_url"] %></p>
+                  <% } %> 
+                </div>
+            </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">Start Date</span>
+                  <div class="infoBoxData">
+                      <input type="date" class="form-control" name="start_date" value="<%=formdata['start_date'] %>" id="start_date" placeholder="Enter start date">
+                      <% if(typeof errors !== 'undefined' && typeof errors.start_date !== 'undefined') { %>
+                        <p class = "error"><%- errors["start_date"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">End Date</span>
+                  <div class="infoBoxData">
+                      <input type="date" class="form-control" name="end_date" value="<%=formdata['end_date'] %>" id="end_date" placeholder="Enter end date">
+                      <% if(typeof errors !== 'undefined' && typeof errors.end_date !== 'undefined') { %>
+                        <p class = "error"><%- errors["end_date"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">Choose Dashboard</span>
+                  <div class="infoBoxData infoSelectBox">
+                      <div class="form-group">
+                        <select class="form-control" name="dashboard" >
+                          <option value="">Select Dashboard</option>
+                          <option value="dashboard_1">Dashboard - 1</option>
+                          <option value="dashboard_2">Dashboard - 2</option>
+                        </select>
+                        <% if(typeof errors !== 'undefined' && typeof errors.dashboard !== 'undefined') { %>
+                          <p class = "error"><%- errors["dashboard"] %></p>
+                      <% } %> 
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="eventInfoBox">
+          <div class="infoBoxTitle">
+              <h3>Enter Event Description</h3>
+          </div>
+          <div class="infoBoxContent">
+              <div class="boxContentTextArea">
+                  <div class="infoBoxData">
+                      <textarea class="form-control" rows="6" name="description"  placeholder="Enter event description"><%=formdata['description'] %></textarea>
+                      <% if(typeof errors !== 'undefined' && typeof errors.description !== 'undefined') { %>
+                        <p class = "error"><%- errors["description"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- Add Images section -->
+    <div class="addEventImgSec">
+      <div class="infoBoxTitle">
+          <h3>Add Event Images</h3>
+      </div>
+        <div class="addEventImg">
+            <div class="addEvntImgColl addEvntImg">
+              <div class="addEImg">
+                  <input type="file" id="myFile" name="image[]" class="multiple_images" multiple accept="image/*"> 
+                  <div class="image_hidden"></div>
+                  <div class="addNewEvntImg">
+                      <h4>Add Images</h4>
+                      <img src="/assets/images/navIcon/addImg.png" />
+                  </div>
+              </div>
+            </div>
+            <div class="image_display"></div>
+            <% if(typeof errors !== 'undefined' && typeof errors.image_data !== 'undefined') { %>
+              <p class = "error"><%- errors["image_data"] %></p>
+          <% } %> 
+            
+        </div>
+    </div>
+    <!-- End Images section -->
+    <!-- Add video section -->
+    <div class="addEventImgSec">
+      <div class="infoBoxTitle">
+          <h3>Add Event Video</h3>
+      </div>
+        <div class="addEventImg">
+            <div class="addEvntImgColl addEvntImg">
+              <div class="addEImg">
+                  <input type="file" id="myFile" name="image[]" class="multiple_videos" multiple accept="video/mp4"> 
+                  <div class="video_hidden"></div>
+                  <div class="addNewEvntImg">
+                      <h4>Add Video</h4>
+                      <img src="/assets/images/navIcon/addImg.png" />
+                  </div>
+              </div>
+            </div>
+            <div class="video_display"></div>
+            
+            <% if(typeof errors !== 'undefined' && typeof errors.video_data !== 'undefined') { %>
+              <p class = "error"><%- errors["video_data"] %></p>
+          <% } %> 
+        </div>
+    </div>
+    <!-- End Add video section -->
+</div>
+<!-- Submit Button -->
+<div class="adminSubmitBtn">
+    <button type="submit" class="btn btn-primary adminPageBtn">Add Event</button>
+</div>
+<!-- Submit Button -->
+</div>
+</form>
+      <!-- content-wrapper ends -->
+
+
+

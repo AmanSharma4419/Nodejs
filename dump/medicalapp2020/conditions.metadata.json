@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"medicalapp2020.conditions"}],"uuid":"4847ee2827844a769f1fe4cafd021185"}

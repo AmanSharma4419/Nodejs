@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "45f9b5e1-3f91-4967-a803-61b48b89c91c",
+		"name": "Beauty & Glam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImlhdCI6MTU5NzEyMDA1MX0.21HzuVmrrlqOzu7IF1G4pAVU9bInSL7H9ghJfKfSgFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"tony.emi@yopmail.com\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7700/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7700",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Timezones",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImlhdCI6MTU5NzEzNDYyN30.HPUveg4_wy7CL8R78OlmS1CX_ePza1SxdgO3nRxq324",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7700/api/timezones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7700",
+					"path": [
+						"api",
+						"timezones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAgendaDates",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImlhdCI6MTU5NzIxMTY5Mn0.M-OpVWsEFTjwiAai1LU_yGqzjebrKPSO_f_EIM2s9Lk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"event_id\": \"5f240a4c64fff77188c7ca80\",\n    \"page\": 1,\n    \"limit\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://13.59.30.160:7700/api/agendas/dates",
+					"protocol": "http",
+					"host": [
+						"13",
+						"59",
+						"30",
+						"160"
+					],
+					"port": "7700",
+					"path": [
+						"api",
+						"agendas",
+						"dates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAgendaByDate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImlhdCI6MTU5NzIxMTY5Mn0.M-OpVWsEFTjwiAai1LU_yGqzjebrKPSO_f_EIM2s9Lk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"event_id\": \"5f240a4c64fff77188c7ca80\",\n    \"date\": \"13-08-2020\",\n    \"page\": 1,\n    \"limit\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://13.59.30.160:7700/api/agendas/databy-date",
+					"protocol": "http",
+					"host": [
+						"13",
+						"59",
+						"30",
+						"160"
+					],
+					"port": "7700",
+					"path": [
+						"api",
+						"agendas",
+						"databy-date"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

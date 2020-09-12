@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"medicalapp2020.motor_distributions"}],"uuid":"6497d322d0b547bca9ff7a49a689be85"}

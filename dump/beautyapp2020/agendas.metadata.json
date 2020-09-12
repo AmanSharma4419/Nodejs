@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"beautyapp2020.agendas"}],"uuid":"a82508d0e26c477ca481f61d801428b2"}

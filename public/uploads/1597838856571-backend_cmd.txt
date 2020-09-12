@@ -1,0 +1,41 @@
+SSH LOGIN : ssh -i VirtualEvent.pem ubuntu@3.128.218.115
+
+
+BACKEND COMMANDS :
+
+LOCAL KEY GENERATION :
+
+mkcert backend1.illumeetvirtual.com
+
+export KEY_PATH=backend1.illumeetvirtual.com-key.pem
+
+export CERT_PATH=backend1.illumeetvirtual.com.pem
+
+export CA_PATH=backend1.illumeetvirtual.com.pem
+
+
+
+ADDING KEY & SECRET : 
+
+export CKEY=Lh8X1_eMyQ0M3SN4zzNSAA==
+
+export CSEC=gGJcuBRF6uboKOqjf7nzRZXT0A3IlpWwRCpJbw4DZMQ=
+
+
+
+
+
+FRONTEND COMMANDS : 
+
+export AUTH_SERVER=https://backend1.illumeetvirtual.com
+
+
+
+SERVE REACT : serve -p 5000
+
+
+CERTIFICATES : 
+
+SSLCertificateFile /etc/ssl/site/star.illumeetvirtual.com.crt
+SSLCertificateKeyFile /etc/ssl/site/STAR_illumeetvirtual_com.pem
+SSLCertificateChainFile /etc/ssl/site/star.illumeetvirtual.com.ca-bundle

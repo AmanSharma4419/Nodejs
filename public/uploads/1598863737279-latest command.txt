@@ -1,0 +1,3 @@
+mongodump -d mongodb://13.59.30.160:27017/beautyapp2020 -o /var/www/html/beauty-backend/db_dump
+
+pm2 start npm --name my-app -- start

@@ -1,0 +1,67 @@
+
+<div class="content-wrapper">
+  <!-- Page Title Header Starts-->
+  <div class="headerTitle">
+      <h2>Edit profile</h2>    
+  </div>
+  <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+    <p class = "alert alert-success ml15 mr15 text-center"><%- errors.msg %></p>
+ <% } %>  
+ <% if(typeof errors !== 'undefined' && typeof errors.msg !== 'undefined') { %>
+    <p class = "alert alert-danger ml15 mr15 text-center"><%- errors.message %></p>
+ <% } %>      
+ <form action="/user/update-admin/<%= data._id %>" method="post" >
+  <!-- Page Title Header Ends-->
+<div class="midContentRightBar">
+    <div class="meddleContentSec addClientBlock">
+      <div class="eventInfoBox">
+          <div class="infoBoxContent">
+              <div class="boxContentRow">
+                  <span class="infoTitle">First Name</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control" name="first_name" value="<%= data.first_name %>" id="first_name" placeholder="Enter First name">
+                      <% if(typeof errors !== 'undefined' && typeof errors.first_name !== 'undefined') { %>
+                        <p class = "error"><%- errors["first_name"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">Last Name</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control" id="" placeholder="Enter last name" name="last_name" value="<%= data.last_name %>" id="last_name">
+                      <% if(typeof errors !== 'undefined' && typeof errors.last_name !== 'undefined') { %>
+                        <p class = "error"><%- errors["last_name"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">Email</span>
+                  <div class="infoBoxData">
+                      <input type="email" class="form-control" name="email" value="<%= data.email %>" id="email" placeholder="Enter Email" readonly>
+                  </div>
+              </div>
+              <div class="boxContentRow">
+                  <span class="infoTitle">Phone</span>
+                  <div class="infoBoxData">
+                      <input type="text" class="form-control" name="mobile_number" value="<%= data.mobile_number %>" id="mobile_number" placeholder="Enter Phone">
+                      <% if(typeof errors !== 'undefined' && typeof errors.mobile_number !== 'undefined') { %>
+                        <p class = "error"><%- errors["mobile_number"] %></p>
+                    <% } %> 
+                  </div>
+              </div>
+            
+          </div>
+      </div>
+     
+     
+    <!-- Submit Button -->
+    <div class="adminSubmitBtn">
+        <button type="submit" class="btn btn-primary adminPageBtn">Add Client</button>
+    </div>
+    <!-- Submit Button -->
+    </div>
+</div>
+</form>
+</div>
+<!-- content-wrapper ends -->
+  <!-- content-wrapper ends -->

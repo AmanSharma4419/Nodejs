@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"beautyapp2020.sessions"}],"uuid":"eacb41c294714620a829f68d04c0ca6e"}
